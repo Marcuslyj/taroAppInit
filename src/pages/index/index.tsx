@@ -4,7 +4,8 @@ import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
 
 import logo from "./hook.png";
 
-import "./index.less";
+// import "./index.less";
+import styles from "./index.module.less";
 
 const Index = () => {
   const env = useEnv();
@@ -24,7 +25,7 @@ const Index = () => {
   }, [show, showModal]);
 
   return (
-    <View className="wrapper">
+    <View className={`${styles.wrapper}`}>
       <Image className="logo" src={logo} />
       <Text className="title">为Taro而设计的Hooks Library</Text>
       <Text className="desc">
