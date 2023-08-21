@@ -1,3 +1,5 @@
+const path = require("path");
+
 const config = {
   projectName: "outbound_miniApp",
   date: "2023-8-18",
@@ -10,6 +12,10 @@ const config = {
   sourceRoot: "src",
   outputRoot: "dist",
   plugins: ["@taro-hooks/plugin-react"],
+  alias: {
+    "@": path.resolve(__dirname, "..", "src"),
+    "@components": path.resolve(__dirname, "..", "src/components"),
+  },
   defineConstants: {},
   copy: {
     patterns: [],

@@ -1,4 +1,6 @@
-import { Component, PropsWithChildren, ReactNode } from "react";
+import React, { Component, PropsWithChildren, ReactNode } from "react";
+import { Provider } from "react-redux";
+import store from "./store";
 import "./app.less";
 
 class App extends Component<PropsWithChildren<ReactNode>> {
@@ -10,7 +12,7 @@ class App extends Component<PropsWithChildren<ReactNode>> {
 
   // this.props.children 是将要会渲染的页面
   render() {
-    return this.props.children;
+    return <Provider store={store}>{this.props.children}</Provider>;
   }
 }
 

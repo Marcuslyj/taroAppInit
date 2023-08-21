@@ -6,8 +6,15 @@ import logo from "./hook.png";
 
 // import "./index.less";
 import styles from "./index.module.less";
+import { useDispatch, useSelector } from "react-redux";
+import { setName } from "@/store/modules/global";
 
 const Index = () => {
+  const global = useSelector((state: any) => state.global);
+  const dispatch = useDispatch();
+
+  console.log("global", global, setName);
+
   const env = useEnv();
   const { setTitle } = useNavigationBar({ title: "Taro Hooks" });
   const showModal = useModal({
@@ -26,6 +33,15 @@ const Index = () => {
 
   return (
     <View className={`${styles.wrapper}`}>
+      <View>appName: {global.name}</View>
+      <Button
+        className="button"
+        onClick={() => {
+          dispatch(setName("new name" + Math.random()));
+        }}
+      >
+        setName
+      </Button>
       <Image className="logo" src={logo} />
       <Text className="title">为Taro而设计的Hooks Library</Text>
       <Text className="desc">
