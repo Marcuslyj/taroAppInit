@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-import { View, Text, Image, Button } from "@tarojs/components";
+import { View, Text, Image } from "@tarojs/components";
 import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
 import logo from "./hook.png";
-// import { Button } from "@nutui/nutui-react-taro";
+import { Button } from "@nutui/nutui-react-taro";
 
 // import "./index.less";
 import styles from "./index.module.less";
@@ -34,6 +34,8 @@ const Index = () => {
   return (
     <View className={`${styles.wrapper}`}>
       <View>appName: {global.name}</View>
+      <Button type="primary">主要按钮</Button>
+
       <Button
         className="button"
         onClick={() => {
