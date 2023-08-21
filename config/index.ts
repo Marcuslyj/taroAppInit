@@ -11,7 +11,7 @@ const config = {
   },
   sourceRoot: "src",
   outputRoot: "dist",
-  plugins: ["@taro-hooks/plugin-react"],
+  plugins: ["@taro-hooks/plugin-react", "@tarojs/plugin-platform-lark"],
   alias: {
     "@": path.resolve(__dirname, "..", "src"),
     "@components": path.resolve(__dirname, "..", "src/components"),

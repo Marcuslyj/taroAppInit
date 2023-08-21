@@ -18,6 +18,7 @@
     "build:qq": "taro build --type qq",
     "build:jd": "taro build --type jd",
     "build:quickapp": "taro build --type quickapp",
+    "build:lark": "taro build --type lark",
     "dev:weapp": "npm run build:weapp -- --watch",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
@@ -26,7 +27,8 @@
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
-    "dev:quickapp": "npm run build:quickapp -- --watch"
+    "dev:quickapp": "npm run build:quickapp -- --watch",
+    "dev:lark": "npm run build:lark -- --watch"
   },
   "browserslist": [
     "last 3 versions",
@@ -45,6 +47,7 @@
     "@tarojs/plugin-platform-alipay": "3.6.13",
     "@tarojs/plugin-platform-h5": "3.6.13",
     "@tarojs/plugin-platform-jd": "3.6.13",
+    "@tarojs/plugin-platform-lark": "^1.1.4",
     "@tarojs/plugin-platform-qq": "3.6.13",
     "@tarojs/plugin-platform-swan": "3.6.13",
     "@tarojs/plugin-platform-tt": "3.6.13",
