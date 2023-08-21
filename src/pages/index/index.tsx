@@ -33,7 +33,7 @@ const Index = () => {
 
   return (
     <View className={`${styles.wrapper}`}>
-      {/* <AtButton type="primary">按钮文案</AtButton> */}
+      <AtButton type="primary">按钮文案</AtButton>
       <View>appName: {global.name}</View>
       <Button
         className="button"
