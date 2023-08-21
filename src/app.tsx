@@ -1,6 +1,7 @@
 import React, { Component, PropsWithChildren, ReactNode } from "react";
 import { Provider } from "react-redux";
 import store from "./store";
+import "taro-ui/dist/style/index.scss"; // 全局引入一次即可
 import "./app.less";
 
 class App extends Component<PropsWithChildren<ReactNode>> {
