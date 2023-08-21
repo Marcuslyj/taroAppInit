@@ -4,6 +4,8 @@ import store from "./store";
 // import "@nutui/nutui-react-taro/dist/style.css";
 import "./app.less";
 
+console.log(ProcessEnv);
+
 class App extends Component<PropsWithChildren<ReactNode>> {
   componentDidMount() {}
 

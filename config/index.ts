@@ -18,7 +18,7 @@ const config = {
     375: 2 / 1,
   },
   sourceRoot: "src",
-  outputRoot: "dist",
+  outputRoot: `dist/${process.env.TARO_ENV}`,
   plugins: [
     "@taro-hooks/plugin-react",
     "@tarojs/plugin-platform-lark",
@@ -28,7 +28,10 @@ const config = {
     "@": path.resolve(__dirname, "..", "src"),
     "@components": path.resolve(__dirname, "..", "src/components"),
   },
-  defineConstants: {},
+  defineConstants: {
+    // 页面中无法访问 process？？先这样定义
+    ProcessEnv: JSON.stringify(process.env),
+  },
   copy: {
     patterns: [],
     options: {},
