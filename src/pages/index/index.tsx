@@ -34,16 +34,14 @@ const Index = () => {
   return (
     <View className={`${styles.wrapper}`}>
       <View>appName: {global.name}</View>
-      <Button type="primary">主要按钮</Button>
-
-      <Button
+      {/* <Button
         className="button"
         onClick={() => {
           dispatch(setName("new name" + Math.random()));
         }}
       >
         setName
-      </Button>
+      </Button> */}
       <Image className="logo" src={logo} />
       <Text className="title">为Taro而设计的Hooks Library</Text>
       <Text className="desc">
@@ -56,8 +54,11 @@ const Index = () => {
         <Text className="note">{env}</Text>
       </View>
       {/* <Button className="button" onClick={() => setTitle("Taro Hooks Nice!")}> */}
-      <Button className="button" onClick={handleModal}>
+      {/* <Button className="button" onClick={handleModal}>
         使用Modal
+      </Button> */}
+      <Button type="primary" className="btn">
+        NutUI React Button
       </Button>
     </View>
   );

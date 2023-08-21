@@ -2,7 +2,7 @@ const path = require("path");
 const loadPlugin = (name) => path.resolve(__dirname, "..", "plugins", name);
 
 const config = {
-  projectName: "outbound_miniApp",
+  projectName: "ldit-pm-mini-app",
   date: "2023-8-18",
   designWidth(input) {
     // 配置 NutUI 375 尺寸
