@@ -1,4 +1,5 @@
 const path = require("path");
+const loadPlugin = (name) => path.resolve(__dirname, "..", "plugins", name);
 
 const config = {
   projectName: "outbound_miniApp",
@@ -20,6 +21,7 @@ const config = {
   sourceRoot: "src",
   outputRoot: `dist/${process.env.TARO_ENV}`,
   plugins: [
+    loadPlugin("updateProjectConfig"),
     "@taro-hooks/plugin-react",
     "@tarojs/plugin-platform-lark",
     "@tarojs/plugin-html",

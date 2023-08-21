@@ -1,0 +1,15 @@
+{
+	"miniprogramRoot": "./dist",
+	"projectname": "ldit-pm-mini-app",
+	"description": "项目管家小程序",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"enhance": false,
+		"compileHotReLoad": false,
+		"postcss": false,
+		"minified": false
+	},
+	"compileType": "miniprogram",
+	"appid": "wx67dc1540c1887bfa"
+}
