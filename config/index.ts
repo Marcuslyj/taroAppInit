@@ -1,13 +1,13 @@
 const path = require("path");
 
 const config = {
-  projectName: "outbound_miniApp",
+  projectName: "ldit-pm-mini-app",
   date: "2023-8-18",
   designWidth(input) {
-    // // 配置 NutUI 375 尺寸
-    // if (input?.file?.replace(/\\+/g, "/").indexOf("@nutui") > -1) {
-    //   return 375;
-    // }
+    // 配置 NutUI 375 尺寸
+    if (input?.file?.replace(/\\+/g, "/").indexOf("@nutui") > -1) {
+      return 375;
+    }
     // 全局使用 Taro 默认的 750 尺寸
     return 750;
   },
@@ -18,7 +18,7 @@ const config = {
     375: 2 / 1,
   },
   sourceRoot: "src",
-  outputRoot: "dist",
+  outputRoot: `dist/${process.env.TARO_ENV}`,
   plugins: [
     "@taro-hooks/plugin-react",
     "@tarojs/plugin-platform-lark",
@@ -28,7 +28,10 @@ const config = {
     "@": path.resolve(__dirname, "..", "src"),
     "@components": path.resolve(__dirname, "..", "src/components"),
   },
-  defineConstants: {},
+  defineConstants: {
+    // 页面中无法访问 process？？先这样定义
+    ProcessEnv: JSON.stringify(process.env),
+  },
   copy: {
     patterns: [],
     options: {},
