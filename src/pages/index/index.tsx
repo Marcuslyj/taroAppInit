@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-import { View, Text, Image, Button } from "@tarojs/components";
+import { View, Text, Image } from "@tarojs/components";
 import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
 import logo from "./hook.png";
-// import { Button } from "@nutui/nutui-react-taro";
+import { Button } from "@nutui/nutui-react-taro";
 
 // import "./index.less";
 import styles from "./index.module.less";
@@ -34,14 +34,14 @@ const Index = () => {
   return (
     <View className={`${styles.wrapper}`}>
       <View>appName: {global.name}</View>
-      <Button
+      {/* <Button
         className="button"
         onClick={() => {
           dispatch(setName("new name" + Math.random()));
         }}
       >
         setName
-      </Button>
+      </Button> */}
       <Image className="logo" src={logo} />
       <Text className="title">为Taro而设计的Hooks Library</Text>
       <Text className="desc">
@@ -54,8 +54,11 @@ const Index = () => {
         <Text className="note">{env}</Text>
       </View>
       {/* <Button className="button" onClick={() => setTitle("Taro Hooks Nice!")}> */}
-      <Button className="button" onClick={handleModal}>
+      {/* <Button className="button" onClick={handleModal}>
         使用Modal
+      </Button> */}
+      <Button type="primary" className="btn">
+        NutUI React Button
       </Button>
     </View>
   );

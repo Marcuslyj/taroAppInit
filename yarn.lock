@@ -1373,7 +1373,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nutui/icons-react-taro@0.0.1":
+"@nutui/icons-react-taro@0.0.1", "@nutui/icons-react-taro@^0.0.1":
   version "0.0.1"
   resolved "https://registry.npmmirror.com/@nutui/icons-react-taro/-/icons-react-taro-0.0.1.tgz#1687dfb9051ae77941ea134d47862eef1f438289"
   integrity sha512-uHUaVnh9yfkUdbYLEfoxArFedP7pti+sOrnBTDknemsJKqK/jnQ9xnIKpO2l+1CgGWpbAkipQVBDUM7CXKuWaA==
