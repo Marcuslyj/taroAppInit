@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-import { View, Text, Image } from "@tarojs/components";
+import { View, Text, Image, Button } from "@tarojs/components";
 import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
 import logo from "./hook.png";
-import { Button } from "@nutui/nutui-react-taro";
+// import { Button } from "@nutui/nutui-react-taro";
 
 // import "./index.less";
 import styles from "./index.module.less";

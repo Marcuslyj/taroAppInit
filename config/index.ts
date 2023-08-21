@@ -4,10 +4,10 @@ const config = {
   projectName: "outbound_miniApp",
   date: "2023-8-18",
   designWidth(input) {
-    // 配置 NutUI 375 尺寸
-    if (input?.file?.replace(/\\+/g, "/").indexOf("@nutui") > -1) {
-      return 375;
-    }
+    // // 配置 NutUI 375 尺寸
+    // if (input?.file?.replace(/\\+/g, "/").indexOf("@nutui") > -1) {
+    //   return 375;
+    // }
     // 全局使用 Taro 默认的 750 尺寸
     return 750;
   },
@@ -22,7 +22,7 @@ const config = {
   plugins: [
     "@taro-hooks/plugin-react",
     "@tarojs/plugin-platform-lark",
-    "@tarojs/plugin-html",
+    // "@tarojs/plugin-html",
   ],
   alias: {
     "@": path.resolve(__dirname, "..", "src"),
