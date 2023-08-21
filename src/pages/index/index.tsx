@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-import { View, Text, Button, Image } from "@tarojs/components";
+import { View, Text, Image } from "@tarojs/components";
 import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
-import { AtButton } from "taro-ui";
 import logo from "./hook.png";
+import { Button } from "@nutui/nutui-react-taro";
 
 // import "./index.less";
 import styles from "./index.module.less";
@@ -33,7 +33,6 @@ const Index = () => {
 
   return (
     <View className={`${styles.wrapper}`}>
-      <AtButton type="primary">按钮文案</AtButton>
       <View>appName: {global.name}</View>
       <Button
         className="button"

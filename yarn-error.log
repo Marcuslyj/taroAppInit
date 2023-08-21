@@ -78,8 +78,7 @@ npm manifest:
       "react": "^18.0.0",
       "react-dom": "^18.0.0",
       "react-redux": "^8.1.2",
-      "taro-hooks": "2.0.5",
-      "taro-ui": "^3.1.1"
+      "taro-hooks": "2.0.5"
     },
     "devDependencies": {
       "@babel/core": "^7.8.0",

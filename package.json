@@ -1,8 +1,8 @@
 {
-  "name": "outboundMiniApp",
+  "name": "ldit-pm-mini-app",
   "version": "1.0.0",
   "private": true,
-  "description": "出库小程序",
+  "description": "项目管家小程序",
   "templateInfo": {
     "name": "taro-hooks@2x",
     "typescript": true,
@@ -38,12 +38,14 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
+    "@nutui/nutui-react-taro": "^2.0.14",
     "@reduxjs/toolkit": "^1.9.5",
     "@taro-hooks/plugin-react": "2.0.5",
     "@taro-hooks/shared": "2.0.5",
     "@tarojs/components": "3.6.13",
     "@tarojs/helper": "3.6.13",
     "@tarojs/plugin-framework-react": "3.6.13",
+    "@tarojs/plugin-html": "^3.6.13",
     "@tarojs/plugin-platform-alipay": "3.6.13",
     "@tarojs/plugin-platform-h5": "3.6.13",
     "@tarojs/plugin-platform-jd": "3.6.13",
@@ -59,8 +61,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^8.1.2",
-    "taro-hooks": "2.0.5",
-    "taro-ui": "^3.1.1"
+    "taro-hooks": "2.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
