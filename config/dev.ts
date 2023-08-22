@@ -5,7 +5,8 @@ module.exports = {
   defineConstants: {},
   mini: {},
   h5: {},
-  appId: {
+  appid: {
+    // ${TARO_ENV}: [project.${*}.json, ${appid}]
     lark: ["lark", "wx67dc1540c1887bfa"],
   },
 };

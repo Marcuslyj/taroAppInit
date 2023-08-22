@@ -3,7 +3,7 @@ const path = require("path");
 const { readFileSync, writeFileSync } = require("fs");
 const glob = require("glob");
 
-export default function updateAppId() {
+export default function updateProjectConfig() {
   const { TARO_ENV } = process.env;
   if (!TARO_ENV) return;
 
@@ -17,7 +17,7 @@ export default function updateAppId() {
   // appid 的配置写在环境配置文件下
   const envConfig = require(`../../config/${env}.ts`);
   // ["filename","appid"]的格式
-  const appIdOpts = get(envConfig, `appId.${TARO_ENV}`);
+  const appIdOpts = get(envConfig, `appid.${TARO_ENV}`);
   if (!appIdOpts) return;
 
   const [targetFile, appid] = appIdOpts;
