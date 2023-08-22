@@ -9,4 +9,7 @@ module.exports = {
   defineConstants: {},
   mini: {},
   h5: {},
+  appId: {
+    lark: ["lark", "cli_a45f33636139500d"],
+  },
 };

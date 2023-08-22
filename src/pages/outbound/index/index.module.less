@@ -1,0 +1,41 @@
+:global {
+  :local(.outbound-page) {
+    .page-hd {
+      display: flex;
+      position: relative;
+      height: 60px;
+      font-size: 32px;
+      .right-nav {
+        position: absolute;
+        right: 10px;
+        .add-btn {
+          width: 40px;
+          height: 40px;
+          margin-left: 30px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .outbound-list {
+      .list-item {
+        margin-bottom: 10px;
+        font-size: 28px;
+        .item-hd {
+          padding: 10px;
+          background-color: #396acc;
+          padding-left: 10px;
+          text-align: left;
+        }
+        .item-bd {
+          .desc-img {
+            width: 80px;
+            height: 80px;
+          }
+          .text-wrap {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+}

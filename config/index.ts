@@ -25,6 +25,7 @@ const config = {
     "@taro-hooks/plugin-react",
     "@tarojs/plugin-platform-lark",
     "@tarojs/plugin-html",
+    "@dcasia/mini-program-tailwind-webpack-plugin/dist/taro",
   ],
   alias: {
     "@": path.resolve(__dirname, "..", "src"),

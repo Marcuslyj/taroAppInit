@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import "@nutui/nutui-react-taro/dist/style.css";
 import "./app.less";
+import 'windi.css';
 
 console.log(ProcessEnv);
 
