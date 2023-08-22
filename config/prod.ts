@@ -1,4 +1,8 @@
 module.exports = {
+  appid: {
+    // ${TARO_ENV}: [project.${*}.json, ${appid}]
+    lark: ["lark", "cli_a4ac0d3cf1b8900e"],
+  },
   env: {
     NODE_ENV: '"production"',
   },
@@ -16,7 +20,6 @@ module.exports = {
     //    */
     //   chain.plugin('analyzer')
     //     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
-
     //   /**
     //    * 如果 h5 端首屏加载时间过长，可以使用 prerender-spa-plugin 插件预加载首页。
     //    * @docs https://github.com/chrisvfritz/prerender-spa-plugin
