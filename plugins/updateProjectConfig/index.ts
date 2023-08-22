@@ -1,4 +1,4 @@
-import { get, merge } from "lodash";
+const { get, merge } = require("lodash");
 const path = require("path");
 const { readFileSync, writeFileSync } = require("fs");
 const glob = require("glob");
