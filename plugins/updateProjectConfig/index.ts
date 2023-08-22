@@ -20,22 +20,19 @@ export default function updateProjectConfig() {
   const appIdOpts = get(envConfig, `appid.${TARO_ENV}`);
   if (!appIdOpts) return;
 
-  const [targetFile, appid] = appIdOpts;
+  const [targetFile, appid] = appIdOpts || [];
 
   /**
    * 写入配置只更新TARO_ENV 对应文件
    */
   // base config 文件路径
-  const baseConfigPath = path.resolve(
-    __dirname,
-    "../../project.config",
-    "project.base.json"
-  );
+
+  const configDirPath = path.resolve(__dirname, "../../project.config");
+  const baseConfigPath = path.resolve(configDirPath, "project.base.json");
   // 自定义 config 文件路径，这个文件不会被复写
   const targetCustomPath = path.resolve(
-    __dirname,
-    "../../project.config",
-    `project.${targetFile || "config"}.json`
+    configDirPath,
+    `project.${targetFile}.json`
   );
 
   // 检查有没有自定义配置文件
@@ -51,7 +48,7 @@ export default function updateProjectConfig() {
       customConfig = JSON.parse(readFileSync(targetCustomPath, "utf-8")) || {};
     // 3. compose
     const config = merge({}, projectConfig, customConfig);
-    // 4. update
+    // 4. update appid
     config.appid = appid;
     // 5. 写入
     const outputPath = path.resolve(
