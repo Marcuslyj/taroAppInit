@@ -24,8 +24,15 @@ const WorkHourFillIndex = () => {
     ])
 
     const handleDayRender = (date: any) => {
-        console.log(date)
-        return <View>{date?.day}</View>
+        const year = date?.type === 'active' ? date?.year : date?.preYear
+        const month = date?.type === 'active' ? date?.month : date?.preMonth
+        const calendarDate = year + '-' + (month >= 10 ? month : '0' + month) + '-' + date?.day
+        const calendarItem = calendarList.find((_) => _.date === calendarDate)
+        if (calendarItem) {
+            const dateClass = 'calendar-render-day ' + calendarItem?.versionState.toLowerCase()
+            return <View className={dateClass}>{date?.day}</View>
+        }
+        return <View className="calendar-render-day">{date?.day}</View>
     }
 
     const handleDayChange = (params: string) => {
@@ -57,13 +64,13 @@ const WorkHourFillIndex = () => {
 
     return (
       <View className={styles['work-hour-fill-index']}>
-        <View className={styles['calendar-wrapper']}>
+        <View className="calendar-wrapper">
             {
                 showCalendar && <Calendar
                     popup={false}
                     showTitle={false}
                     startDate={startDate}
-                    // renderDay={handleDayRender}
+                    renderDay={handleDayRender}
                     onDayClick={handleDayChange}
                     onPageChange={handleMonthChange}
                 />
