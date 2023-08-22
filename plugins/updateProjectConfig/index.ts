@@ -26,12 +26,16 @@ export default function updateProjectConfig() {
    * 写入配置只更新TARO_ENV 对应文件
    */
   // base config 文件路径
-  const baseConfigPath = path.resolve(__dirname, "../../", "project.base.json");
-  // 自定义 config 文件路径，.conf.json结尾，这个文件不会被复写
+  const baseConfigPath = path.resolve(
+    __dirname,
+    "../../project.config",
+    "project.base.json"
+  );
+  // 自定义 config 文件路径，这个文件不会被复写
   const targetCustomPath = path.resolve(
     __dirname,
-    "../../",
-    `project.${targetFile || "config"}.conf.json`
+    "../../project.config",
+    `project.${targetFile || "config"}.json`
   );
 
   // 检查有没有自定义配置文件
