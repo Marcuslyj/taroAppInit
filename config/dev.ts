@@ -1,7 +1,7 @@
 module.exports = {
   appid: {
     // ${TARO_ENV}: [project.${*}.json, ${appid}]
-    lark: ["lark", "wx67dc1540c1887bfa"],
+    lark: ["lark", "cli_a45f33636139500d"],
   },
   env: {
     NODE_ENV: '"development"',

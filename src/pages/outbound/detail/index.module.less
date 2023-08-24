@@ -1,0 +1,49 @@
+:global {
+  :local(.outbound-page) {
+    .page-hd {
+      display: flex;
+      position: relative;
+      height: 60px;
+      font-size: 32px;
+      .right-nav {
+        position: absolute;
+        right: 10px;
+        .add-btn {
+          width: 40px;
+          height: 40px;
+          margin-left: 30px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .outbound-list {
+      .list-item {
+        margin-bottom: 10px;
+        font-size: 28px;
+        box-shadow: var(
+          --nutui-cell-box-shadow,
+          0px 1px 7px 0px rgb(237, 238, 241)
+        );
+        .item-hd {
+          font-size: 30px;
+          padding: 10px;
+          font-weight: bold;
+          // background-color: #396acc;
+          padding-left: 10px;
+          text-align: left;
+        }
+        .item-bd {
+          .desc-img {
+            width: 80px;
+            height: 80px;
+          }
+          .text-wrap {
+            flex: 1;
+            padding-left: 10px;
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+}

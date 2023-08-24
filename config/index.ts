@@ -35,6 +35,7 @@ const config = {
         disabledBlob: false,
       },
     ],
+    "@dcasia/mini-program-tailwind-webpack-plugin/dist/taro",
   ],
   alias: {
     "@": path.resolve(__dirname, "..", "src"),

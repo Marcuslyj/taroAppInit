@@ -1,5 +1,4 @@
-
 export default {
-  navigationBarTitleText: 'Taro-hooks',
+  navigationBarTitleText: "移动出库",
   enableShareAppMessage: true,
 };
