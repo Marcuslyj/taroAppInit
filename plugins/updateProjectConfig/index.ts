@@ -3,6 +3,10 @@ const path = require("path");
 const { readFileSync, writeFileSync } = require("fs");
 const glob = require("glob");
 
+/**
+ * 生成端平台的项目配置文件
+ * @returns
+ */
 export default function updateProjectConfig() {
   const { TARO_ENV } = process.env;
   if (!TARO_ENV) return;
@@ -11,15 +15,14 @@ export default function updateProjectConfig() {
   const rootDir = process.cwd();
 
   const envs = ["dev", "test", "prod"];
-  //  获取构建环境参数，默认 dev
+  //  获取构建环境参数，默认“dev”，npm script中是“--dev”的形式
   const env = (
     process.argv.find((item) => envs.map((env) => `--${env}`).includes(item)) ||
     "dev"
   ).replace("--", "");
 
-  // appid 的配置写在环境配置文件下
+  // appid 的配置写在环境配置文件下，如config/dev.ts
   const envConfig = require(path.resolve(rootDir, `config/${env}.ts`));
-  console.log(envConfig);
   // ["filename","appid"]的格式
   const appIdOpts = get(envConfig, `appid.${TARO_ENV}`);
   if (!appIdOpts) return;

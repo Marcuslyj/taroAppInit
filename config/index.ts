@@ -1,5 +1,7 @@
 const path = require("path");
-const loadPlugin = (name) => path.resolve(__dirname, "..", "plugins", name);
+const getEnvConfig = require("./env");
+
+const loadPlugin = (name) => path.resolve(process.cwd(), "plugins", name);
 
 const config = {
   projectName: "ldit-pm-mini-app",
@@ -25,6 +27,14 @@ const config = {
     "@taro-hooks/plugin-react",
     "@tarojs/plugin-platform-lark",
     "@tarojs/plugin-html",
+    [
+      "@tarojs/plugin-http",
+      {
+        enableCookie: true,
+        disabledFormData: false,
+        disabledBlob: false,
+      },
+    ],
   ],
   alias: {
     "@": path.resolve(__dirname, "..", "src"),
@@ -32,7 +42,7 @@ const config = {
   },
   defineConstants: {
     // 页面中无法访问 process？？先这样定义
-    ProcessEnv: JSON.stringify(process.env),
+    ProcessEnv: JSON.stringify(getEnvConfig()),
   },
   copy: {
     patterns: [],

@@ -10,8 +10,7 @@ declare module "*.less";
 declare module "*.scss";
 declare module "*.sass";
 declare module "*.styl";
-declare const ProcessEnv: NodeJS.ProcessEnv;
-
+declare const ProcessEnv: NodeJS.ProcessEnv & { [x: string]: string };
 declare namespace NodeJS {
   interface ProcessEnv {
     TARO_ENV:

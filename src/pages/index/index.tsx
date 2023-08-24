@@ -3,6 +3,8 @@ import { View, Text, Image } from "@tarojs/components";
 import { useEnv, useNavigationBar, useModal, useToast } from "taro-hooks";
 import logo from "./hook.png";
 import { Button } from "@nutui/nutui-react-taro";
+import { useMount } from "ahooks";
+import { post } from "@/services/request";
 
 // import "./index.less";
 import styles from "./index.module.less";
@@ -13,7 +15,7 @@ const Index = () => {
   const global = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
 
-  console.log("global", global, setName);
+  // console.log("global", global, setName);
 
   const env = useEnv();
   const { setTitle } = useNavigationBar({ title: "Taro Hooks" });
@@ -31,17 +33,28 @@ const Index = () => {
     });
   }, [show, showModal]);
 
+  useMount(() => {
+    console.log("mount=========");
+    // post(
+    //   "/digitalize/mid/user/loginBUserDetail",
+    //   {},
+    //   {
+    //     requestType: "sale",
+    //   }
+    // );
+  });
+
   return (
     <View className={`${styles.wrapper}`}>
       <View>appName: {global.name}</View>
-      {/* <Button
+      <Button
         className="button"
         onClick={() => {
-          dispatch(setName("new name" + Math.random()));
+          dispatch(setName("new name" + Math.floor(Math.random() * 200)));
         }}
       >
         setName
-      </Button> */}
+      </Button>
       <Image className="logo" src={logo} />
       <Text className="title">为Taro而设计的Hooks Library</Text>
       <Text className="desc">
