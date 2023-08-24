@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro';
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { View } from '@tarojs/components'
-import { Button, Cell, InfiniteLoading, Toast, Image, Swipe, Popup } from '@nutui/nutui-react-taro';
+import { Button, InfiniteLoading, Toast, Image, Swipe, Popup } from '@nutui/nutui-react-taro';
 import { Search, Uploader, RectRight } from '@nutui/icons-react-taro';
 import SearchPopup from '../components/SearchPopup';
 
@@ -11,6 +11,8 @@ const Outbound = () => {
 
   const [outboundList, setOutboundList] = useState<Outbound.ListItem[]>([])
   const [hasMore, setHasMore] = useState(true)
+
+  const searchPopupRef = useRef<any>()
 
   useEffect(() => {
     loadMore(null)
@@ -68,9 +70,10 @@ const Outbound = () => {
     done?.()
   }
 
-  const [searchPopupShow, setSearchPopupShow] = useState(false)
 
-  const handleSearch = () => { }
+  const handleSearch = () => {
+    console.log('handleSearch')
+  }
 
   const handleAdd = () => {
     Taro.navigateTo({
@@ -85,7 +88,7 @@ const Outbound = () => {
         <View className="right-nav">
           <View className='t-flex t-items-center t-justify-start'>
             {/* <Button shape="round" block> */}
-            <Search onClick={() => { console.log('11'); setSearchPopupShow(true) }} />
+            <Search onClick={() => { searchPopupRef.current?.open() }} />
             {/* </Button> */}
             {/* <Button shape="round"  > */}
             <View className='add-btn' onClick={handleAdd}><Uploader /></View>
@@ -130,7 +133,7 @@ const Outbound = () => {
         </InfiniteLoading>
       </View>
       {/* 搜索面板 */}
-      <SearchPopup visible={searchPopupShow} onSearch={handleSearch} onClose={() => { setSearchPopupShow(false) }} ></SearchPopup>
+      <SearchPopup ref={searchPopupRef} onSearch={handleSearch} ></SearchPopup>
     </View >
 
   )
