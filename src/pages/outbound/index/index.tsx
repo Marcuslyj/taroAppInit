@@ -1,8 +1,9 @@
-
-import React, { useEffect, useState, useCallback } from 'react';
+import Taro from '@tarojs/taro';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { View } from '@tarojs/components'
-import { Button, Cell, InfiniteLoading, Toast, Image, Swipe } from '@nutui/nutui-react-taro';
+import { Button, InfiniteLoading, Toast, Image, Swipe, Popup } from '@nutui/nutui-react-taro';
 import { Search, Uploader, RectRight } from '@nutui/icons-react-taro';
+import SearchPopup from '../components/SearchPopup';
 
 import styles from './index.module.less'
 
@@ -10,6 +11,8 @@ const Outbound = () => {
 
   const [outboundList, setOutboundList] = useState<Outbound.ListItem[]>([])
   const [hasMore, setHasMore] = useState(true)
+
+  const searchPopupRef = useRef<any>()
 
   useEffect(() => {
     loadMore(null)
@@ -67,6 +70,17 @@ const Outbound = () => {
     done?.()
   }
 
+
+  const handleSearch = () => {
+    console.log('handleSearch')
+  }
+
+  const handleAdd = () => {
+    Taro.navigateTo({
+      url: "/pages/outbound/detail/index"
+    })
+  }
+
   return (
     <View className={styles['outbound-page']}>
       <View className='page-hd'>
@@ -74,10 +88,10 @@ const Outbound = () => {
         <View className="right-nav">
           <View className='t-flex t-items-center t-justify-start'>
             {/* <Button shape="round" block> */}
-            <Search />
+            <Search onClick={() => { searchPopupRef.current?.open() }} />
             {/* </Button> */}
             {/* <Button shape="round"  > */}
-            <View className='add-btn'><Uploader /></View>
+            <View className='add-btn' onClick={handleAdd}><Uploader /></View>
           </View>
           {/* </Button> */}
         </View>
@@ -93,7 +107,7 @@ const Outbound = () => {
               <Swipe
                 key={index}
                 rightAction={
-                  <Button shape="square">
+                  <Button shape="square" type="danger">
                     删除
                   </Button>
                 }
@@ -118,7 +132,10 @@ const Outbound = () => {
           })}
         </InfiniteLoading>
       </View>
+      {/* 搜索面板 */}
+      <SearchPopup ref={searchPopupRef} onSearch={handleSearch} ></SearchPopup>
     </View >
+
   )
 }
 

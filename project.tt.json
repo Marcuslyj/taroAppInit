@@ -2,7 +2,7 @@
   "miniprogramRoot": "./",
   "projectname": "outbound_miniApp",
   "description": "出库小程序",
-  "appid": "touristappid",
+  "appid": "cli_a4977a57d739900c",
   "setting": {
     "urlCheck": true,
     "es6": false,
