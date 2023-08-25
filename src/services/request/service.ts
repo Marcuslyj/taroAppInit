@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AxiosInstance, InternalAxiosRequestConfig } from "axios";
+import { AxiosInstance, AxiosRequestConfig } from "axios";
 import { config } from "./config";
 
 const { request_timeout, default_headers } = config;
@@ -34,7 +34,7 @@ const service: AxiosInstance = axios.create({
 // request拦截器
 service.interceptors.request.use(
   (
-    config: InternalAxiosRequestConfig & {
+    config: AxiosRequestConfig & {
       requestType: RequestType;
       customBaseURL: string;
     }

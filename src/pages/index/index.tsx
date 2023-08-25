@@ -34,14 +34,14 @@ const Index = () => {
   }, [show, showModal]);
 
   useMount(() => {
-    console.log("mount=========");
-    // post(
-    //   "/digitalize/mid/user/loginBUserDetail",
-    //   {},
-    //   {
-    //     requestType: "sale",
-    //   }
-    // );
+    console.log("mount=========2");
+    post(
+      "/digitalize/mid/user/loginBUserDetail",
+      {},
+      {
+        requestType: "sale",
+      }
+    );
   });
 
   return (
