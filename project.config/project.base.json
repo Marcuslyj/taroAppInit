@@ -10,6 +10,5 @@
 		"postcss": false,
 		"minified": false
 	},
-	"compileType": "miniprogram",
-	"appid": "cli_a4977a57d739900c"
+	"compileType": "miniprogram"
 }
